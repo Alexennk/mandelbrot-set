@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandelbrot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="ex1" width="720px" height="720px"></canvas>
+    <form action="#">
+
+        <div class="slider-box">
+            <span class="zoom-box">
+                <div class="zoom-text">zoom</div>
+                <input type="range" id="zoom" value="4" step=".0000001" min="0.000001" max="4" oninput="zoomFunction()">
+            </span>
+            <span class="iter-box">
+                <div class="iter-text">iterations</div>
+                <input type="range" id="iter" value="20" step="5" min="1" max="500" oninput="iterFunction()">
+            </span>
+        </div>
+
+        <div class="button-box">
+            <button class="button-color">
+                Color
+            </button>
+            <button class="button-reset">
+                Reset
+            </button>
+            <button class="button-save">
+                Save
+            </button>
+        </div>
+
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
