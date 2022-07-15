@@ -1,11 +1,10 @@
-let mandelbrot = new Mandelbrot("ex1");
 let flagColor = 0;
 let canvas = document.getElementById("ex1");
 var context = canvas.getContext("2d");
 var imageData = context.createImageData(canvas.width, canvas.height);
+let mandelbrot = new Mandelbrot();
 
-function Mandelbrot(canvasId) {
-    var canvas = document.getElementById(canvasId);
+function Mandelbrot() {
     var context = canvas.getContext("2d");
     var imageData = context.createImageData(canvas.width, canvas.height);
     var aspectRatio = canvas.height / canvas.width;
@@ -69,6 +68,7 @@ function Mandelbrot(canvasId) {
     const buttonColor = document.querySelector('.button-color');
     const buttonReset = document.querySelector('.button-reset');
     const buttonSave = document.querySelector('.button-save');
+    const buttonResize = document.querySelector('.button-resize');
     var zoomSlider = document.getElementById("zoom");
     buttonColor.addEventListener('click',  () => {
         if (flagColor === 1) {
@@ -97,6 +97,17 @@ function Mandelbrot(canvasId) {
         image.src = canvas.toDataURL();
         saveImage(image);
     });
+    buttonResize.addEventListener('click',  () => {
+        var widthResize = document.getElementById("resize-input-width");
+        var heightResize = document.getElementById("resize-input-height");
+        canvas.width = widthResize.value;
+        canvas.height = heightResize.value;
+        context = canvas.getContext("2d");
+        imageData = context.createImageData(canvas.width, canvas.height);
+        mandelbrot = new Mandelbrot();
+        if (flagColor) mandelbrot.renderColor();
+        else mandelbrot.renderBlack();
+    });
     canvas.addEventListener("mousedown", function(e) { 
         var rect = canvas.getBoundingClientRect(); 
         prevX = (mandelbrot.center.x + 2) * 150;
@@ -124,6 +135,7 @@ function iterFunction() {
     if (flagColor) mandelbrot.renderColor();
     else mandelbrot.renderBlack();
 }
+
 
 function saveImage(image) {
     var link = document.createElement("a");

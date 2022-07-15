@@ -13,7 +13,6 @@ body {
 
 form {
     text-align: center;
-    /* margin: 0 auto; */
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -24,7 +23,7 @@ form {
     transform: rotate(-180deg);
 }
 
-.button-color, .button-reset, .button-save {
+.button-color, .button-reset, .button-save, .button-resize {
     font-size: 26px;
     padding: 10px;
     margin-bottom: 20px;
@@ -38,10 +37,10 @@ form {
 }
 
 .button-box {
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
-.button-color:hover, .button-reset:hover, .button-save:hover {
+.button-color:hover, .button-reset:hover, .button-save:hover, .button-resize:hover {
     box-shadow: 2px 2px 3px rgba(28, 28, 181, 0.5), 2px 2px 3px rgba(28, 28, 181, 0.5);
 }
 
@@ -59,4 +58,33 @@ form {
     color: #fff;
     font-size: 26px;
     border-radius: 5px;
+}
+
+.resize-box {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.resize-form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.resize-form-text {
+    font-size: 24px;
+    background-color: rgba(28, 28, 181, .8);
+    color: #fff;
+    padding: 3px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+#resize-input-width, #resize-input-height {
+    width: 100px;
+    border: none;
+    padding: 4px;
 }
