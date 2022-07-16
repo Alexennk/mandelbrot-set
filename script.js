@@ -69,6 +69,7 @@ function Mandelbrot() {
     const buttonReset = document.querySelector('.button-reset');
     const buttonSave = document.querySelector('.button-save');
     const buttonResize = document.querySelector('.button-resize');
+    const buttonDraw = document.querySelector('.custom-mode-button-draw');
     var zoomSlider = document.getElementById("zoom");
     buttonColor.addEventListener('click',  () => {
         if (flagColor === 1) {
@@ -100,11 +101,23 @@ function Mandelbrot() {
     buttonResize.addEventListener('click',  () => {
         var widthResize = document.getElementById("resize-input-width");
         var heightResize = document.getElementById("resize-input-height");
-        canvas.width = widthResize.value;
-        canvas.height = heightResize.value;
+        canvas.width = Number(widthResize.value);
+        canvas.height = Number(heightResize.value);
         context = canvas.getContext("2d");
         imageData = context.createImageData(canvas.width, canvas.height);
         mandelbrot = new Mandelbrot();
+        if (flagColor) mandelbrot.renderColor();
+        else mandelbrot.renderBlack();
+    });
+    buttonDraw.addEventListener('click',  () => {
+        var centerX = document.getElementById("custom-mode-input-x");
+        var centerY = document.getElementById("custom-mode-input-y");
+        var diameter = document.getElementById("custom-mode-input-r");
+        var iter = document.getElementById("custom-mode-input-iter");
+        mandelbrot.center.x = Number(centerX.value);
+        mandelbrot.center.y = Number(centerY.value);
+        mandelbrot.r = Number(diameter.value);
+        mandelbrot.iterations = Number(iter.value);
         if (flagColor) mandelbrot.renderColor();
         else mandelbrot.renderBlack();
     });

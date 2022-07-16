@@ -8,7 +8,7 @@
 </head>
 <body>
     <canvas id="ex1" width="720px" height="720px"></canvas>
-    <form action="#">
+    <form class="form-usual" action="#">
 
         <div class="slider-box">
             <span class="zoom-box">
@@ -49,6 +49,48 @@
             <button class="button-resize">
                 Resize
             </button>
+        </div>
+
+    </form>
+
+    <form class="form-custom" action="#">
+
+        <div class="custom-title">
+            Expended
+        </div>
+        
+        <div class="custom-mode-box">
+            <div class="custom-mode-form">
+                <div class="custom-mode-form-text">
+                    Center-X
+                </div>
+                <input type="text" id="custom-mode-input-x" value="0">
+            </div>
+            <div class="custom-mode-form">
+                <div class="custom-mode-form-text">
+                    Center-Y
+                </div>
+                <input type="text" id="custom-mode-input-y" value="0">
+            </div>
+            <div class="custom-mode-form">
+                <div class="custom-mode-form-text">
+                    Diameter
+                </div>
+                <input type="text" id="custom-mode-input-r" value="4">
+            </div>
+            <div class="custom-mode-form">
+                <div class="custom-mode-form-text">
+                    Iterations
+                </div>
+                <input type="text" id="custom-mode-input-iter" value="20">
+            </div>
+        </div>
+
+        <div class="button-box">
+            <button class="custom-mode-button-draw">
+                Draw
+            </button>
+            
         </div>
 
     </form>

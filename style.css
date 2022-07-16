@@ -23,7 +23,7 @@ form {
     transform: rotate(-180deg);
 }
 
-.button-color, .button-reset, .button-save, .button-resize {
+.button-color, .button-reset, .button-save, .button-resize, .custom-mode-button-draw {
     font-size: 26px;
     padding: 10px;
     margin-bottom: 20px;
@@ -37,10 +37,10 @@ form {
 }
 
 .button-box {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
-.button-color:hover, .button-reset:hover, .button-save:hover, .button-resize:hover {
+.button-color:hover, .button-reset:hover, .button-save:hover, .button-resize:hover, .custom-mode-button-draw:hover {
     box-shadow: 2px 2px 3px rgba(28, 28, 181, 0.5), 2px 2px 3px rgba(28, 28, 181, 0.5);
 }
 
@@ -74,17 +74,41 @@ form {
     margin: 10px;
 }
 
-.resize-form-text {
+.resize-form-text, .custom-mode-form-text {
     font-size: 24px;
     background-color: rgba(28, 28, 181, .8);
     color: #fff;
     padding: 3px;
     border-radius: 4px;
-    margin-bottom: 8px;
+    margin: 8px 0;
 }
 
 #resize-input-width, #resize-input-height {
     width: 100px;
     border: none;
     padding: 4px;
+}
+
+#custom-mode-input-x, #custom-mode-input-y, #custom-mode-input-r, #custom-mode-input-iter {
+    width: 150px;
+    border: 0;
+    padding: 4px;
+}
+
+.form-custom {
+    height: fit-content;
+    padding: 10px;
+    margin: auto 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.custom-mode-button-draw {
+    margin-bottom: 0;
+}
+
+.custom-title {
+    font-size: 28px;
+    color: rgba(28, 28, 181, .8);
+    font-weight: bold;    
 }
