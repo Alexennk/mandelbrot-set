@@ -8,7 +8,7 @@ function Mandelbrot() {
     var context = canvas.getContext("2d");
     var imageData = context.createImageData(canvas.width, canvas.height);
     var aspectRatio = canvas.height / canvas.width;
-    this.iterations = 250;
+    this.iterations = 20;
     this.r = 4;
     this.center = {
         x: 0,
@@ -30,10 +30,10 @@ function Mandelbrot() {
         var zr = coord.x;
         var zi = coord.y;
         for (var i = 0; i < this.iterations; i++) {
-            if (zr ** 2 + zi ** 2 > 4) {
+            if (zr * zr + zi * zi > 4) {
                 return [false, i];
             }
-            newzr = zr ** 2 - zi ** 2 + cr;
+            newzr = zr * zr - zi * zi + cr;
             newzi = 2 * zr * zi + ci;
             zr = newzr;
             zi = newzi;
@@ -114,7 +114,7 @@ function Mandelbrot() {
         prevY = (mandelbrot.center.y + 2) * 150;
         newX = (e.clientX - rect.left);
         newY = (e.clientY - rect.top);
-        gyp = Math.sqrt((newY - prevY) ** 2 + (newX - prevX) ** 2);
+        gyp = Math.sqrt((newY - prevY) * (newY - prevY) + (newX - prevX) * (newX - prevX));
         ratio = 30 * mandelbrot.r / gyp;
         mandelbrot.center.x += (newX - prevX) * ratio / 150;
         mandelbrot.center.y += (-1) * (newY - prevY) * ratio / 150;
