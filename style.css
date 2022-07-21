@@ -11,19 +11,19 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background: linear-gradient(-45deg, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);;
-    background-size: 400% 400%;
+    background: linear-gradient(-45deg, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+    background-size: 350% 350%;
     animation: animate 7.5s ease-in-out infinite;
 }
 
 @keyframes animate{
-    0%{
+    0% {
       background-position: 0 50%;
     }
-    50%{
+    50% {
       background-position: 100% 50%;
     }
-    100%{
+    100% {
       background-position: 0 50%;
     }
   }
@@ -94,7 +94,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin: 10px;
+    margin: 0 10px;
 }
 
 .resize-form-text, .custom-mode-form-text {
@@ -156,4 +156,45 @@ button:hover {
         margin: auto 0;
     }
     
+    .zoom-text, .iter-text {
+        font-size: 18px;
+    }
+
+    .resize-form-text, .custom-mode-form-text {
+        font-size: 18px;
+    }
+
+    #resize-input-width, #resize-input-height {
+        width: 75px;
+        border: none;
+        padding: 4px;
+    }
+    
+    #custom-mode-input-x, #custom-mode-input-y, #custom-mode-input-r, #custom-mode-input-iter {
+        width: 100px;
+        border: 0;
+        padding: 4px;
+    }
+
+    .resize-form-text, .custom-mode-form-text {
+        font-size: 18px;
+        background-color: rgba(28, 28, 181, .5);
+        color: #fff;
+        padding: 3px;
+        border-radius: 4px;
+        margin: 8px 0;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 7px;
+        margin-bottom: 20px;
+        height: 40px;
+        width: 80px;
+        border-radius: 10px;
+    }
+
+    .custom-title {
+        font-size: 24px;
+    }
 }

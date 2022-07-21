@@ -163,5 +163,5 @@ function saveImage(image) {
 let windowWidth = document.documentElement.clientWidth;
 mandelbrot.renderBlack();
 if (windowWidth < 750) {
-    resizeFunction(windowWidth - 30, windowWidth - 30);
+    resizeFunction(windowWidth, windowWidth);
 }
