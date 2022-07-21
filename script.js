@@ -118,12 +118,13 @@ function Mandelbrot() {
     });
     canvas.addEventListener("mousedown", function(e) { 
         var rect = canvas.getBoundingClientRect(); 
-        prevX = (mandelbrot.center.x + 2) * 150;
-        prevY = (mandelbrot.center.y + 2) * 150;
+        prevX = canvas.width / 2;
+        prevY = canvas.height / 2;
         newX = (e.clientX - rect.left);
         newY = (e.clientY - rect.top);
+        maxInterval =  Math.max(Math.abs(newX - prevX), Math.abs(newY - prevY)); 
         gyp = Math.sqrt((newY - prevY) * (newY - prevY) + (newX - prevX) * (newX - prevX));
-        ratio = 30 * mandelbrot.r / gyp;
+        ratio = (30 / gyp) * (maxInterval / canvas.width * 2) * mandelbrot.r;
         mandelbrot.center.x += (newX - prevX) * ratio / 150;
         mandelbrot.center.y += (-1) * (newY - prevY) * ratio / 150;
         if (flagColor) mandelbrot.renderColor();

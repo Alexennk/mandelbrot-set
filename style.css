@@ -151,11 +151,7 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 708px) {
-    .form-custom {
-        margin: auto 0;
-    }
-    
+@media screen and (max-width: 708px) {    
     .zoom-text, .iter-text {
         font-size: 18px;
     }
@@ -178,11 +174,6 @@ button:hover {
 
     .resize-form-text, .custom-mode-form-text {
         font-size: 18px;
-        background-color: rgba(28, 28, 181, .5);
-        color: #fff;
-        padding: 3px;
-        border-radius: 4px;
-        margin: 8px 0;
     }
 
     button {
@@ -196,5 +187,11 @@ button:hover {
 
     .custom-title {
         font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .form-custom {
+        margin: auto 0;
     }
 }
