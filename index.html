@@ -8,92 +8,97 @@
 </head>
 <body>
     <canvas id="ex1" width="720px" height="720px"></canvas>
-    <form class="form-usual" action="#">
 
-        <div class="slider-box">
-            <span class="zoom-box">
-                <div class="zoom-text">Zoom</div>
-                <input type="range" id="zoom" value="4" step="any" min="0.00000001" max="4" oninput="zoomFunction()">
-            </span>
-            <span class="iter-box">
-                <div class="iter-text">Iterations</div>
-                <input type="range" id="iter" value="20" step="5" min="1" max="500" oninput="iterFunction()">
-            </span>
-        </div>
-        
-        <div class="resize-box">
-            <div class="resize-form">
-                <div class="resize-form-text">
-                    Width
-                </div>
-                <input type="text" id="resize-input-width" value="720">
-            </div>
-            <div class="resize-form">
-                <div class="resize-form-text">
-                    Height
-                </div>
-                <input type="text" id="resize-input-height" value="720">
-            </div>
-        </div>
+    <div class="form-box">
+        <form class="form-usual" action="#">
 
-        <div class="button-box">
-            <button class="button-color">
-                Color
-            </button>
-            <button class="button-reset">
-                Reset
-            </button>
-            <button class="button-save">
-                Save
-            </button>
-            <button class="button-resize">
-                Resize
-            </button>
-        </div>
-
-    </form>
-
-    <form class="form-custom" action="#">
-
-        <div class="custom-title">
-            Expended
-        </div>
-        
-        <div class="custom-mode-box">
-            <div class="custom-mode-form">
-                <div class="custom-mode-form-text">
-                    Center-X
-                </div>
-                <input type="text" id="custom-mode-input-x" value="0">
+            <div class="slider-box">
+                <span class="zoom-box">
+                    <div class="zoom-text">Zoom</div>
+                    <input type="range" id="zoom" value="4" step="any" min="0.00000001" max="4" oninput="zoomFunction()">
+                </span>
+                <span class="iter-box">
+                    <div class="iter-text">Iterations</div>
+                    <input type="range" id="iter" value="20" step="5" min="1" max="500" oninput="iterFunction()">
+                </span>
             </div>
-            <div class="custom-mode-form">
-                <div class="custom-mode-form-text">
-                    Center-Y
-                </div>
-                <input type="text" id="custom-mode-input-y" value="0">
-            </div>
-            <div class="custom-mode-form">
-                <div class="custom-mode-form-text">
-                    Diameter
-                </div>
-                <input type="text" id="custom-mode-input-r" value="4">
-            </div>
-            <div class="custom-mode-form">
-                <div class="custom-mode-form-text">
-                    Iterations
-                </div>
-                <input type="text" id="custom-mode-input-iter" value="20">
-            </div>
-        </div>
-
-        <div class="button-box">
-            <button class="custom-mode-button-draw">
-                Draw
-            </button>
             
-        </div>
+            <div class="resize-box">
+                <div class="resize-form">
+                    <div class="resize-form-text">
+                        Width
+                    </div>
+                    <input type="text" id="resize-input-width" value="720">
+                </div>
+                <div class="resize-form">
+                    <div class="resize-form-text">
+                        Height
+                    </div>
+                    <input type="text" id="resize-input-height" value="720">
+                </div>
+            </div>
+    
+            <div class="button-box">
+                <button class="button-color">
+                    Color
+                </button>
+                <button class="button-reset">
+                    Reset
+                </button>
+                <button class="button-save">
+                    Save
+                </button>
+                <button class="button-resize">
+                    Resize
+                </button>
+            </div>
+    
+        </form>
+    
+        <form class="form-custom" action="#">
+    
+            <div class="custom-title">
+                Expended
+            </div>
+            
+            <div class="custom-mode-box">
+                <div class="custom-mode-form">
+                    <div class="custom-mode-form-text">
+                        Center-X
+                    </div>
+                    <input type="text" id="custom-mode-input-x" value="0">
+                </div>
+                <div class="custom-mode-form">
+                    <div class="custom-mode-form-text">
+                        Center-Y
+                    </div>
+                    <input type="text" id="custom-mode-input-y" value="0">
+                </div>
+                <div class="custom-mode-form">
+                    <div class="custom-mode-form-text">
+                        Diameter
+                    </div>
+                    <input type="text" id="custom-mode-input-r" value="4">
+                </div>
+                <div class="custom-mode-form">
+                    <div class="custom-mode-form-text">
+                        Iterations
+                    </div>
+                    <input type="text" id="custom-mode-input-iter" value="20">
+                </div>
+            </div>
+    
+            <div class="button-box">
+                <button class="custom-mode-button-draw">
+                    Draw
+                </button>
+                
+            </div>
+    
+        </form>
+    </div>
 
-    </form>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,15 +1,32 @@
 canvas {
     border: none; 
     margin-bottom: 0;   
+    margin-right: 60px;
 }
 
 body {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0 20px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color:lightpink;
+    background: linear-gradient(-45deg, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);;
+    background-size: 400% 400%;
+    animation: animate 7.5s ease-in-out infinite;
 }
+
+@keyframes animate{
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0 50%;
+    }
+  }
 
 form {
     text-align: center;
@@ -19,11 +36,17 @@ form {
     flex-direction: column;
 }
 
+.form-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 #zoom {
     transform: rotate(-180deg);
 }
 
-.button-color, .button-reset, .button-save, .button-resize, .custom-mode-button-draw {
+button {
     font-size: 26px;
     padding: 10px;
     margin-bottom: 20px;
@@ -40,7 +63,7 @@ form {
     margin-top: 10px;
 }
 
-.button-color:hover, .button-reset:hover, .button-save:hover, .button-resize:hover, .custom-mode-button-draw:hover {
+button:hover {
     box-shadow: 2px 2px 3px rgba(28, 28, 181, 0.5), 2px 2px 3px rgba(28, 28, 181, 0.5);
 }
 
@@ -54,7 +77,7 @@ form {
     padding: 5px;
     margin: 5px auto;
     width: 100px;
-    background-color: rgba(28, 28, 181, .8);
+    background-color: rgba(28, 28, 181, 0.5);
     color: #fff;
     font-size: 26px;
     border-radius: 5px;
@@ -76,7 +99,7 @@ form {
 
 .resize-form-text, .custom-mode-form-text {
     font-size: 24px;
-    background-color: rgba(28, 28, 181, .8);
+    background-color: rgba(28, 28, 181, .5);
     color: #fff;
     padding: 3px;
     border-radius: 4px;
@@ -98,7 +121,8 @@ form {
 .form-custom {
     height: fit-content;
     padding: 10px;
-    margin: auto 0;
+    margin: auto 60px;
+    margin-right: 0;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
 }
@@ -109,6 +133,27 @@ form {
 
 .custom-title {
     font-size: 28px;
-    color: rgba(28, 28, 181, .8);
-    font-weight: bold;    
+    color: rgb(28, 28, 181);
+    font-weight: bold;   
+}
+
+
+/* media request */
+
+@media screen and (max-width: 1473px) {
+    canvas {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .body {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 708px) {
+    .form-custom {
+        margin: auto 0;
+    }
+    
 }

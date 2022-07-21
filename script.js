@@ -86,6 +86,7 @@ function Mandelbrot() {
         mandelbrot.r = 4;
         mandelbrot.center.x = 0;
         mandelbrot.center.y = 0;
+        mandelbrot.iterations = 20;
         flagColor = 0;
         var zoomSlider = document.getElementById("zoom");
         zoomSlider.value = 4;
@@ -99,15 +100,9 @@ function Mandelbrot() {
         saveImage(image);
     });
     buttonResize.addEventListener('click',  () => {
-        var widthResize = document.getElementById("resize-input-width");
-        var heightResize = document.getElementById("resize-input-height");
-        canvas.width = Number(widthResize.value);
-        canvas.height = Number(heightResize.value);
-        context = canvas.getContext("2d");
-        imageData = context.createImageData(canvas.width, canvas.height);
-        mandelbrot = new Mandelbrot();
-        if (flagColor) mandelbrot.renderColor();
-        else mandelbrot.renderBlack();
+        var widthResize = Number(document.getElementById("resize-input-width").value);
+        var heightResize = Number(document.getElementById("resize-input-height").value);
+        resizeFunction(widthResize, heightResize);
     });
     buttonDraw.addEventListener('click',  () => {
         var centerX = document.getElementById("custom-mode-input-x");
@@ -148,8 +143,15 @@ function iterFunction() {
     if (flagColor) mandelbrot.renderColor();
     else mandelbrot.renderBlack();
 }
-
-
+function resizeFunction(widthResize, heightResize) {
+    canvas.width = widthResize;
+    canvas.height = heightResize;
+    context = canvas.getContext("2d");
+    imageData = context.createImageData(canvas.width, canvas.height);
+    mandelbrot = new Mandelbrot();
+    if (flagColor) mandelbrot.renderColor();
+    else mandelbrot.renderBlack();
+} 
 function saveImage(image) {
     var link = document.createElement("a");
     link.setAttribute("href", image.src);
@@ -158,5 +160,8 @@ function saveImage(image) {
 }
 
 
-
+let windowWidth = document.documentElement.clientWidth;
 mandelbrot.renderBlack();
+if (windowWidth < 750) {
+    resizeFunction(windowWidth - 30, windowWidth - 30);
+}
