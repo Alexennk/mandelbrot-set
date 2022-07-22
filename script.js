@@ -1,4 +1,5 @@
 let flagColor = 0;
+let flagDisplay = 0;
 let canvas = document.getElementById("ex1");
 var context = canvas.getContext("2d");
 var imageData = context.createImageData(canvas.width, canvas.height);
@@ -70,6 +71,7 @@ function Mandelbrot() {
     const buttonSave = document.querySelector('.button-save');
     const buttonResize = document.querySelector('.button-resize');
     const buttonDraw = document.querySelector('.custom-mode-button-draw');
+    const buttonExtraParameters = document.querySelector('.extra-parameters-button');
     var zoomSlider = document.getElementById("zoom");
     buttonColor.addEventListener('click',  () => {
         if (flagColor === 1) {
@@ -115,6 +117,25 @@ function Mandelbrot() {
         mandelbrot.iterations = Number(iter.value);
         if (flagColor) mandelbrot.renderColor();
         else mandelbrot.renderBlack();
+    });
+    buttonExtraParameters.addEventListener('click',  () => {
+        if (flagDisplay === 0) {
+            document.querySelector('.form-custom').classList.remove('animate__fadeOutRight');
+            document.querySelector('.form-custom').classList.add('animate__animated');
+            document.querySelector('.form-custom').classList.add('animate__fadeInUp');
+            document.querySelector('.form-custom').style.display = "block";
+            flagDisplay = 1;
+            buttonExtraParameters.textContent = 'Hide Extra Parameters';
+            
+        }
+        else {
+            document.querySelector('.form-custom').classList.remove('animate__fadeInRight');
+            document.querySelector('.form-custom').classList.add('animate__fadeOutRight');
+            flagDisplay = 0;
+            buttonExtraParameters.textContent = 'Show Extra Parameters';
+            document.querySelector('.form-custom').style.display = "block";
+            document.querySelector('.form-custom').style.display = "none";
+        } 
     });
     canvas.addEventListener("mousedown", function(e) { 
         var rect = canvas.getBoundingClientRect(); 

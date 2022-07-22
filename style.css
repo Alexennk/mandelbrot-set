@@ -4,6 +4,10 @@ canvas {
     margin-right: 60px;
 }
 
+html {
+    overflow-y: hidden;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -56,15 +60,26 @@ button {
     background-color: rgb(28, 28, 181);
     border-radius: 10px;
     color: #fff;
-    transition: .15s;
+    transition: .25s;
+}
+
+.extra-parameters-button {
+    width: auto;
+    background-color: rgb(147, 20, 52);
 }
 
 .button-box {
     margin-top: 10px;
+    max-width: 415px;
 }
 
 button:hover {
-    box-shadow: 2px 2px 3px rgba(28, 28, 181, 0.5), 2px 2px 3px rgba(28, 28, 181, 0.5);
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(28, 28, 181);
+    transform: translateY(-0.2em);
+}
+
+.extra-parameters-button:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(147, 20, 52);
 }
 
 .zoom-box, .iter-box {
@@ -119,7 +134,9 @@ button:hover {
 }
 
 .form-custom {
+    display: none;
     height: fit-content;
+    max-width: 158px;
     padding: 10px;
     margin: auto 60px;
     margin-right: 0;
@@ -192,6 +209,8 @@ button:hover {
 
 @media screen and (max-width: 515px) {
     .form-custom {
-        margin: auto 0;
+       margin: 0 auto;
+       margin-bottom: 20px;
+       max-width: 108px;
     }
 }
