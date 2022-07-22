@@ -138,6 +138,9 @@ button:hover {
     margin-right: 0;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
+
+    animation: fadeInUp;
+    animation-duration: 2s;
 }
 
 .custom-mode-button-draw {
@@ -199,7 +202,7 @@ button:hover {
     }
 
     .custom-title {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 

@@ -120,22 +120,19 @@ function Mandelbrot() {
     });
     buttonExtraParameters.addEventListener('click',  () => {
         if (flagDisplay === 0) {
-            document.querySelector('.form-custom').classList.remove('animate__fadeOutRight');
-            document.querySelector('.form-custom').classList.add('animate__animated');
-            document.querySelector('.form-custom').classList.add('animate__fadeInUp');
+            document.querySelector('html').style.overflowY = 'hidden';
             document.querySelector('.form-custom').style.display = "block";
             flagDisplay = 1;
             buttonExtraParameters.textContent = 'Hide Extra Parameters';
             
         }
         else {
-            document.querySelector('.form-custom').classList.remove('animate__fadeInRight');
-            document.querySelector('.form-custom').classList.add('animate__fadeOutRight');
+            document.querySelector('.form-custom').style.display = "none";
             flagDisplay = 0;
             buttonExtraParameters.textContent = 'Show Extra Parameters';
-            document.querySelector('.form-custom').style.display = "block";
-            document.querySelector('.form-custom').style.display = "none";
+            document.querySelector('html').style.overflowY = 'visible';
         } 
+        
     });
     canvas.addEventListener("mousedown", function(e) { 
         var rect = canvas.getBoundingClientRect(); 
