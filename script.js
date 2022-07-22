@@ -120,7 +120,6 @@ function Mandelbrot() {
     });
     buttonExtraParameters.addEventListener('click',  () => {
         if (flagDisplay === 0) {
-            document.querySelector('html').style.overflowY = 'hidden';
             document.querySelector('.form-custom').style.display = "block";
             flagDisplay = 1;
             buttonExtraParameters.textContent = 'Hide Extra Parameters';
@@ -130,7 +129,6 @@ function Mandelbrot() {
             document.querySelector('.form-custom').style.display = "none";
             flagDisplay = 0;
             buttonExtraParameters.textContent = 'Show Extra Parameters';
-            document.querySelector('html').style.overflowY = 'visible';
         } 
         
     });
