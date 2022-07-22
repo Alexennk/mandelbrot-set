@@ -90,10 +90,12 @@ function Mandelbrot() {
         mandelbrot.center.y = 0;
         mandelbrot.iterations = 20;
         flagColor = 0;
-        var zoomSlider = document.getElementById("zoom");
-        zoomSlider.value = 4;
-        var iterSlider = document.getElementById("iter");
-        iterSlider.value = 20;
+        document.getElementById("zoom").value = 4;
+        document.getElementById("iter").value = 20;
+        document.getElementById("custom-mode-input-x").value = 0;
+        document.getElementById("custom-mode-input-y").value = 0;
+        document.getElementById("custom-mode-input-r").value = 4;
+        document.getElementById("custom-mode-input-iter").value = 20;
         mandelbrot.renderBlack();
     });
     buttonSave.addEventListener('click',  () => {
