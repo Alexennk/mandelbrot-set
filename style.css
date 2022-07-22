@@ -4,10 +4,6 @@ canvas {
     margin-right: 60px;
 }
 
-html {
-    overflow-y: hidden;
-}
-
 body {
     box-sizing: border-box;
     margin: 0;
