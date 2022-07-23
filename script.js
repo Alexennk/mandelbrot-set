@@ -125,7 +125,6 @@ function Mandelbrot() {
             document.querySelector('.form-custom').style.display = "block";
             flagDisplay = 1;
             buttonExtraParameters.textContent = 'Hide Extra Parameters';
-            
         }
         else {
             document.querySelector('.form-custom').style.display = "none";
