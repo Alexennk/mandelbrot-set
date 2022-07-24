@@ -5,7 +5,7 @@ canvas {
 }
 
 html {
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 body {
@@ -142,7 +142,8 @@ button:hover {
     margin-right: 0;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    animation: fadeInUp;
+
+    animation: fadeInRight;
     animation-duration: 1s;
 }
 
@@ -167,6 +168,10 @@ button:hover {
     
     .body {
         justify-content: center;
+    }
+
+    html {
+        overflow-y: visible;
     }
 }
 

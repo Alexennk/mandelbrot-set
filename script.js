@@ -120,7 +120,8 @@ function Mandelbrot() {
         if (flagColor) mandelbrot.renderColor();
         else mandelbrot.renderBlack();
     });
-    buttonExtraParameters.addEventListener('click',  () => {
+    buttonExtraParameters.addEventListener('click',  (event) => {
+        event.preventDefault();
         if (flagDisplay === 0) {
             document.querySelector('.form-custom').style.display = "block";
             flagDisplay = 1;
