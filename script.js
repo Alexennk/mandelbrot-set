@@ -131,10 +131,11 @@ function Mandelbrot() {
             flagDisplay = 0;
             buttonExtraParameters.textContent = 'Show Extra Parameters';
         } 
-        
     });
     canvas.addEventListener("mousedown", function(e) { 
         var rect = canvas.getBoundingClientRect(); 
+        var centerX = document.getElementById("custom-mode-input-x");
+        var centerY = document.getElementById("custom-mode-input-y");
         prevX = canvas.width / 2;
         prevY = canvas.height / 2;
         newX = (e.clientX - rect.left);
@@ -144,6 +145,8 @@ function Mandelbrot() {
         ratio = (30 / gyp) * (maxInterval / canvas.width * 2) * mandelbrot.r;
         mandelbrot.center.x += (newX - prevX) * ratio / 150;
         mandelbrot.center.y += (-1) * (newY - prevY) * ratio / 150;
+        centerX.value = mandelbrot.center.x;
+        centerY.value = mandelbrot.center.y;
         if (flagColor) mandelbrot.renderColor();
         else mandelbrot.renderBlack();
     });
@@ -151,13 +154,17 @@ function Mandelbrot() {
  
 function zoomFunction() {
     var zoomSlider = document.getElementById("zoom");
+    var diameter = document.getElementById("custom-mode-input-r");
     mandelbrot.r = Number(zoomSlider.value);
+    diameter.value = mandelbrot.r;
     if (flagColor) mandelbrot.renderColor();
     else mandelbrot.renderBlack();
 }
 function iterFunction() {
     var iterSlider = document.getElementById("iter");
+    var iter = document.getElementById("custom-mode-input-iter");
     mandelbrot.iterations = Number(iterSlider.value);
+    iter.value = mandelbrot.iterations;
     if (flagColor) mandelbrot.renderColor();
     else mandelbrot.renderBlack();
 }
@@ -167,6 +174,9 @@ function resizeFunction(widthResize, heightResize) {
     context = canvas.getContext("2d");
     imageData = context.createImageData(canvas.width, canvas.height);
     mandelbrot = new Mandelbrot();
+    if (widthResize > 950 || heightResize > 720) {
+        document.querySelector('html').style.overflowY = 'visible';
+    }
     if (flagColor) mandelbrot.renderColor();
     else mandelbrot.renderBlack();
 } 

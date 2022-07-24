@@ -142,9 +142,8 @@ button:hover {
     margin-right: 0;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-
     animation: fadeInUp;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 .custom-mode-button-draw {
@@ -165,7 +164,7 @@ button:hover {
         margin: 0;
         margin-bottom: 20px;
     }
-
+    
     .body {
         justify-content: center;
     }
