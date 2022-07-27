@@ -5,6 +5,13 @@ var context = canvas.getContext("2d");
 var imageData = context.createImageData(canvas.width, canvas.height);
 let mandelbrot = new Mandelbrot();
 
+let splash = document.querySelector('.splash');
+
+setTimeout(() => {
+    splash.classList.add('display-none');
+}, 3500);
+
+
 function Mandelbrot() {
     var context = canvas.getContext("2d");
     var imageData = context.createImageData(canvas.width, canvas.height);
