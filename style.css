@@ -38,7 +38,7 @@
     background-size: cover;
     color: #fff;
     text-align: center;
-    line-height: 90vh;
+    line-height: 80vh;
 }
 
 .splash.display-none {
@@ -52,8 +52,8 @@
     width: 100%;
     height: 100vh;
     text-align: center;
-    line-height: 90vh;
-    transition: 1s;
+    line-height: 20vh;
+    transition: 1.2s;
 }
 
 @keyframes fadeIn {
@@ -64,7 +64,7 @@
 
 .splash-title {
     font-family: 'Playfair Display', serif;
-    font-weight: bold;
+    font-weight: 700;
     font-style: italic;
     font-size: 64px;
     opacity: 0;
@@ -127,7 +127,8 @@ form {
 }
 
 button {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display';
+    font-style: normal;
     font-size: 26px;
     padding: auto 10px;
     margin-bottom: 20px;
@@ -167,8 +168,10 @@ button:hover {
 }
 
 .zoom-text, .iter-text {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display';
+    font-style: normal;
     padding: 5px;
+    padding-top: 2px;
     margin: 5px auto;
     width: 120px;
     background-color: rgba(28, 28, 181, 0.5);
@@ -192,7 +195,8 @@ button:hover {
 }
 
 .resize-form-text, .custom-mode-form-text {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display';
+    font-style: normal;
     font-size: 24px;
     background-color: rgba(28, 28, 181, .5);
     color: #fff;
@@ -233,10 +237,11 @@ button:hover {
 
 .custom-title {
     font-family: 'Playfair Display';
+    font-style: normal;
     font-style: italic;
     font-size: 28px;
     color: rgb(28, 28, 181);
-    font-weight: bold;   
+    font-weight: 700;   
 }
 
 
@@ -314,6 +319,7 @@ button:hover {
     }
 
     .splash {
+        line-height: 85vh;
         background-size: 150% 150%;
     }
 

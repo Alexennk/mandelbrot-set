@@ -7,11 +7,6 @@ let mandelbrot = new Mandelbrot();
 
 let splash = document.querySelector('.splash');
 
-setTimeout(() => {
-    splash.classList.add('display-none');
-}, 3500);
-
-
 function Mandelbrot() {
     var context = canvas.getContext("2d");
     var imageData = context.createImageData(canvas.width, canvas.height);
@@ -80,12 +75,22 @@ function Mandelbrot() {
     const buttonDraw = document.querySelector('.custom-mode-button-draw');
     const buttonExtraParameters = document.querySelector('.extra-parameters-button');
     var zoomSlider = document.getElementById("zoom");
+    document.addEventListener('keyup', event => {
+        if ((event.code === 'Enter' || event.code === 'Space') && !splash.classList.contains('display-none')) {
+            splash.classList.add('display-none');
+        }
+    });
+    document.addEventListener("mousedown", function(e) { 
+        if (!splash.classList.contains('display-none')) {
+            splash.classList.add('display-none');
+        }
+    });
     buttonColor.addEventListener('click',  () => {
         if (flagColor === 1) {
             mandelbrot.renderBlack();
             flagColor = 0;
         } 
-        else {
+        else if (flagColor === 0) {
             mandelbrot.renderColor();
             flagColor = 1;
         } 
